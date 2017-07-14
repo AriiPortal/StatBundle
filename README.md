@@ -1,3 +1,5 @@
+WARNING! Migration to Arii 2.0
+
 # StatBundle
 ----
 
@@ -7,8 +9,6 @@ StatBundle is a Symfony bundle to complete the project [Arii](https://github.com
 * Chartplot of avery month with number of anormal instance and average time
 * Pie of history which give the ratio of freak instance (about time)
 * List of freak intance
-
-
 
 
 # Getting started

@@ -1,5 +1,5 @@
 arii_stat:
-    path:     /stat
+    path:     /
     defaults: { _controller: StatBundle:Default:index }
 
 

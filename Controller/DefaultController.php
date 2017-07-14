@@ -51,21 +51,16 @@ public function jobsAction(){
       </head>';
       ksort($Jobs);
 
-      //print_r($Jobs);
+      // print_r($Jobs);
 
       foreach ($Jobs as $k=>$job) {
-          if (isset($job['runs'])) {
-              $status = $job['runs'][0]['status'];
-          }
-          else {
-              $status = 'UNKNOW';
-          }
-          $list .='<row id="'.$job['runs'][0]['dbid'].'" style="background-color: '.$this->ColorStatus[$status].'">';
+          $status = $job['status'];
+          $list .='<row id="'.$job['dbid'].'" style="background-color: '.$this->ColorStatus[$status].'">';
           $list .='<cell>'.$job['spooler'].'</cell>';
 
           $list .='<cell>'.$job['name'].'</cell>';
           if (isset($job['runs'])) {
-            $list .='<cell>'.$job['runs'][0]['start'].'</cell>';
+            $list .='<cell>'.$job['start'].'</cell>';
           }
           $list .='</row>';
       }
@@ -121,21 +116,16 @@ public function jobsAction(){
       ksort($Jobs);
 
       foreach ($Jobs as $k=>$job) {
-          if (isset($job['runs'])) {
-              $status = $job['runs'][0]['status'];
-          }
-          else {
-              $status = 'UNKNOW';
-          }
-          $list .='<row id="'.$job['runs'][0]['dbid'].'" style="background-color: '.$this->ColorStatus[$status].'">';
-          $list .='<cell>'.$job['runs'][0]['dbid'].'</cell>';
+        $status = $job['status'];
+          $list .='<row id="'.$job['dbid'].'" style="background-color: '.$this->ColorStatus[$status].'">';
+          $list .='<cell>'.$job['dbid'].'</cell>';
 
           $list .='<cell>'.$job['spooler'].'</cell>';
 
           $list .='<cell>'.$job['name'].'</cell>';
           if (isset($job['runs'])) {
-            $list .='<cell>'.$job['runs'][0]['start'].'</cell>';
-            $list .='<cell>'.$job['runs'][0]['duration'].'</cell>';
+            $list .='<cell>'.$job['start'].'</cell>';
+            $list .='<cell>'.$job['duration'].'</cell>';
           }
 
           $list .= '<cell>'." ".'</cell>';
